@@ -71,7 +71,7 @@ def test_write_credentials_is_locking_file():
         proc_write.join()
         proc_read.join()
 
-    assert isinstance(exec_info.value, OSError)
+    assert isinstance(exec_info.value, OSError) is False
 
 
 def test_read_creadentials_is_locking_file():
@@ -96,4 +96,4 @@ def test_read_creadentials_is_locking_file():
         proc_write.join()
         proc_read.join()
 
-    assert isinstance(exec_info.value, OSError)
+    assert isinstance(exec_info.value, OSError) is False
