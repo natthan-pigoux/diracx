@@ -65,6 +65,7 @@ ignore = [
     "B008",
     "B006",
     "S101", # bandit: use of assert https://docs.astral.sh/ruff/rules/assert/
+    "S311", # bandit: pseudo-random generators — gubbins uses them for simulation, not crypto
 ]
 
 
