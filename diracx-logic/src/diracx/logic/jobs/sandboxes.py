@@ -217,6 +217,9 @@ async def clean_sandboxes(
         Total number of sandboxes deleted.
 
     """
+    await sandbox_metadata_db._conn.get().commit()  # type: ignore
+    sandbox_metadata_db._conn.set(None)
+
     batch_size = settings.clean_batch_size
     total_deleted = 0
     cursor = 0
