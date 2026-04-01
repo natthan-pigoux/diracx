@@ -167,6 +167,10 @@ class BaseSQLDB(metaclass=ABCMeta):
     def transaction(cls) -> Self:
         raise NotImplementedError("This should never be called")
 
+    @classmethod
+    def no_transaction(cls) -> Self:
+        raise NotImplementedError("This should never be called")
+
     @property
     def engine(self) -> AsyncEngine:
         """The engine to use for database operations.
